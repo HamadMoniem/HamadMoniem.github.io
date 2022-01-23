@@ -1,243 +1,497 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <script data-ad-client="ca-pub-7321918425991131" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo 1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js" integrity="sha512-G8JE1Xbr0egZE5gNGyUm1fF764iHVfRXshIoUWCTPAbKkkItp/6qal5YAHXrxEu4HNfPTQs6HOu3D5vCGS1j3w==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans+Display:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <style>
 
-    <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134418339-2"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
+    html,
+    body {
+      margin: 0;
+    }
+    .loader{
+      font-family: 'Jost', sans-serif;
+      text-align: center;
+      margin-top:30vh;
+    }
 
-            gtag('config', 'UA-134418339-2');
-        </script>
-        <link rel="icon" href="https://www.flaticon.com/premium-icon/icons/svg/2272/2272643.svg" type="image/gif"
-            sizes="16x16" />
+    .hero {
+      background: linear-gradient(
+          109.8deg,
+          rgba(62, 5, 116, 0.8) -5.2%,
+          rgba(41, 14, 151, 0.8) -5.2%,
+          rgba(216, 68, 148, 0.8) 103.3%
+        ),
+        url('https://images.pexels.com/photos/1487154/pexels-photo-1487154.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+      background-attachment: fixed;
+      height: 100vh;
+      background-size: cover;
+      background-position: 50% 0;
+      margin-top: -5vh;
+    }
+    .headers {
+      position: relative;
+      top: 40vh;
+    }
+    .txtbox1 {
+      font-family: 'Google Sans Display', sans-serif;
+      margin-left: 10vw;
+    }
+    .headers > h1,
+    .headers > h4 {
+      font-family: 'Google Sans Display', sans-serif;
+      text-align: left;
+      color: white;
+      font-weight: 400;
+      margin-left: 10vw;
+    }
+    .headers > h1 {
+      font-size: 50px;
+    }
+    .headers > h4 {
+      font-size: 20px;
+    }
+    .wave {
+      margin-top: -50vh;
+    }
+    .mep{
+      text-align: justify;
+      margin-right:10vw;
+    }
+    image{
+      user-select: none;
+    }
+    .sidebare {
+  height: 100%;
+  width: 65px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:#212121;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
 
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
-            integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd"
-            crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
-        <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Google+Sans+Display:wght@300;400;700&display=swap"
-            rel="stylesheet" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+.sidebare a {
+  padding-top: 5vh;
+  margin-left:30%;
+  text-decoration: none;
+  font-size: 25px;
+  color:white;
+  display: block;
+  transition: 0.2s;
+}
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>HamadMoniem</title>
-        <style>
-            html {
-                scroll-behavior: smooth;
-            }
-
-            * {
-                margin: 0;
-            }
-
-            body {
-                background-color: #222831;
-
-                user-select: none;
-                -moz-user-select: none;
-                -webkit-user-select: none;
-                overflow-x: hidden;
-            }
-
-            .identifiers>h1 {
-                /*text-shadow: 0 0 10px #fff, 0 0 12px #fff, 0 0 14px #e60073, 0 0 16px #e60073, 0 0 50px #e60073, 0 0 18px #e60073, 0 0 20px #e60073;*/
-                opacity: 1;
-                font-weight: 400;
-                font-size: 8vw;
-                color: #EEEEEE;
-                text-align: left;
-                position: relative;
-            }
-
-            .identifiers {
-                width: fit-content;
-                position: relative;
-                top: 83%;
-                margin-left: 70px;
-            }
-
-            .identifiers>h4 {
-                opacity: 1;
-                font-size: 20px;
-                color: #bdc3c7;
-                font-weight: 700;
-            }
-
-            #particles {
-                background-attachment: fixed;
-                cursor: pointer;
-                font-family: 'Poppins', sans-serif;
-                height: 120vh;
-                position: relative;
-                margin-top: -400px;
-            }
-
-            .about {
-                margin-left: 70px;
-                margin-top: 34vh;
-                color: red;
-                margin-bottom: 30vh;
-            }
-        </style>
-    </head>
-
-    <body>
-
-        <header class="header" id="particles">
-            <div class="identifiers">
-                <h1 class="one rellax" data-rellax-speed="10" data-aos="fade-up">Mohammad</h1>
-                <h1 class="one rellax" data-rellax-speed="8" data-aos="fade-up">Abd-Elmoniem<span
-                        style="font-size:20vh;">.</span></h1>
-                <h4 class="one rellax" data-rellax-speed="6" data-aos="fade-up">"I have no special talents. I am only
-                    passionately curious." - Albert Einstien
-                </h4>
-
-            </div>
-            <div class="box1 rellax one pulse" id="box" data-rellax-speed="10"></div>
-
-        </header>
+.sidebare a:hover {
+  color: #5e35b1;
+  width:100px;
+  
+}
+.sidebare svg{
+  transition: 0.4s;
+}
+.sidebare svg:hover{
+  border-radius: 100%;
+}
 
 
-        <div class="about">
-            <h1 data-aos="fade-up-right">Hello</h1>
+.mainbl {
+  margin-left: 65px; /* Same as the width of the sidebare */
+ 
+}
+
+@media screen and (max-height: 450px) {
+  .sidebare {padding-top: 15px;}
+  .sidebare a {font-size: 18px;}
+}
+.cupacoffee{
+  width: 30vw;
+  margin-right: 10vw;
+  margin-top: -15vh;
+}
+.grid1{
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 0.0001vw;
+  margin: 0 0 1rem 0;
+}
+
+.i1, .i2, .i3, .i4{
+  width:3vw;
+  margin-left: 2vw;
+  cursor: pointer;
+}
+.ficon{
+  cursor: pointer;
+
+}
+.icons{
+  margin:0 auto 0 auto;
+  margin-top:4vh;
+}
+.i1:hover{
+  color:#00b22d;
+}
+.i3:hover{
+  color:#ea4c89;
+}
+.i4:hover{
+  color:#053eff;
+}
+.fader{
+  opacity:0;
+}
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(2100deg, #FC466B 0%, #3F5EFB 100%);
+    border-radius: -29px;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    transition: 0.5s;
+}
+
+/* Handle on hover */
+
+
+.c1h1{
+  font-size:50px;
+}
+.content{
+  color:#555555;
+ 
+}
+[data-aos="example-anim1"] {
+  width:0%;
+  transition-property:width;
+  transition-duration:2s;
+}
+[data-aos="example-anim1"].aos-animate {
+  
+  width:100%;
+}
+
+[data-aos="example-anim2"] {
+  width:0%;
+  transition-property:width;
+  transition-duration:2s;
+}
+[data-aos="example-anim2"].aos-animate {
+  
+  width:100%;
+}
+[data-aos="example-anim3"] {
+  width:0%;
+  transition-property:width;
+  transition-duration:2s;
+}
+[data-aos="example-anim3"].aos-animate {
+  
+  width:75%;
+}
+[data-aos="example-anim4"] {
+  width:0%;
+  transition-property:width;
+  transition-duration:2s;
+}
+[data-aos="example-anim4"].aos-animate {
+  
+  width:70%;
+}
+[data-aos="example-anim5"] {
+  width:0%;
+  transition-property:width;
+  transition-duration:2s;
+}
+[data-aos="example-anim5"].aos-animate {
+  
+  width:70%;
+}
+[data-aos="example-anim6"] {
+  width:0%;
+  transition-property:width;
+  transition-duration:2s;
+}
+[data-aos="example-anim6"].aos-animate {
+  
+  width:55%;
+}
+.progress{
+  height:20px;
+  border-radius: 20px;
+}
+
+.right2{
+  
+  margin-left: 30px !important;
+
+}
+.cp{
+  text-align: justify !important;
+  height:fit-content;
+}
+body::selection {
+  color: #8e44ad;
+}
+@media only screen and (max-width: 900px) {
+  .b1, .b2{
+    width:70vw !important;
+  }
+  .b2{
+    margin-left:-0px !important;
+  }
+  .bar{
+    width:80vw !important;
+  }
+  img{
+    display: none;
+  }
+  .mainbl{
+    margin-left:40px;
+  }
+
+}
+html{
+  scroll-behavior: smooth;
+}
+  </style>
+  <body>
+    <div class="allcontent mainbl">
+    <div class="sidebare z-depth-3">
+      <a href="#who"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+    </svg></a>
+      <a href="#skills"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M14.19,14.19L6,18L9.81,9.81L18,6M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,10.9A1.1,1.1 0 0,0 10.9,12A1.1,1.1 0 0,0 12,13.1A1.1,1.1 0 0,0 13.1,12A1.1,1.1 0 0,0 12,10.9Z" />
+    </svg></a>
+      <a href="#cost"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M20,18H4V6H20M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M11,17H13V16H14A1,1 0 0,0 15,15V12A1,1 0 0,0 14,11H11V10H15V8H13V7H11V8H10A1,1 0 0,0 9,9V12A1,1 0 0,0 10,13H13V14H9V16H11V17Z" />
+    </svg></a>
+    <a href="#Ann"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12,8H4A2,2 0 0,0 2,10V14A2,2 0 0,0 4,16H5V20A1,1 0 0,0 6,21H8A1,1 0 0,0 9,20V16H12L17,20V4L12,8M15,15.6L13,14H4V10H13L15,8.4V15.6M21.5,12C21.5,13.71 20.54,15.26 19,16V8C20.53,8.75 21.5,10.3 21.5,12Z" />
+  </svg></a>
+    </div>
+    <div class="hero">
+      <div class="headers">
+        <h1 class="fader" data-aos="fade-up" data-aos-delay="100">Hamad Moniem</h1>
+        <h4 class="fader" data-aos="fade-up" data-aos-delay="300">I'm open to hiring!</h4>
+      </div>
+    </div>
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="white"
+        fill-opacity="1"
+        d="M0,288L60,250.7C120,213,240,139,360,133.3C480,128,600,192,720,229.3C840,267,960,277,1080,250.7C1200,224,1320,160,1380,128L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+      ></path>
+    </svg>
+    <div class="content">
+      <div class="txtbox1" id="txtbox">
+        <h1 id="who" class="c1h1" data-aos="fade-right">Who am I?</h1>
+        <h4 class="c1h2" data-aos="fade-right">Get to know me!</h4>
+        <div class="row">
+        <div class="col s6 bar">
+        <p class="mep" data-aos="fade-right" data-aos-delay="300" style="line-height: 1.6em;">
+          I am a <a href=""></a>front-end</a> web designer applying my experience in web development frameworks into high-end projects. Ranked in order of profeciency, I have expertise in HTML5, CSS3, JavaScript, jQuery, Bootstrap, Materialize, and other lesser know libraries. I enjoy web development and wish to pursue it as a full time dream job.
+        </p>
+        
+        
+
+      </div>
+      <div class="col s6">
+        <img class="cupacoffee" data-aos="fade-left" data-aos-delay="250" src="https://blush.ly/zJuqWCbHM/p">
+      </div>
+      
+      
+      </div>
+      <div class="row">
+        <div class="col s12 m5">
+          <img style="width:30vw;" data-aos="fade-left" src="https://blush.ly/i3sAKSvXc/p">
+        </div>
+        <div class="col 12 m5" data-aos="fade-right"  style="margin-left: 3vw;">
+          <h1 id="skills">My Skills</h1>
+          <div class="chart-container">
+            <canvas id="chart" data-aos="fade-up"></canvas>
+        </div>
+        
+        </div>
+      </div>
+      <div class="row" id="cost">
+        <h1 data-aos="zoom-in">Hire Me!</h1>
+        <h4 data-aos="zoom-in">Allow me...</h4>
+        <p data-aos="zoom-in" style="text-align:justify;">Do you need a front-end web developer to design the website of your dreams. <b>You want a web developer</b>, <b>you have a web devloper</b>. Buy Now!</p>
+        
+        <h4 data-aos="zoom-in">Why me?</h4>
+        <p data-aos="zoom-in">My services are high quality and inexpensive. <br> Basic plans start at just 5 bucks! I provide extended options, fast service, animations <br> and featured scroll effects. What could you possibly be waiting for. <b>Order Now!</b><img style="width:30vw; float: right; margin-right: 15vw; margin-top: -5vh;" src="https://blush.ly/BzKgLm7ZU/p"></p>
+        <button data-aos="zoom-in" class="btn-large waves-effect waves-light btn-large blue"> View Listing on Fiverr</button>
+      
         </div>
 
-        <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-        <script>
+      <h2 data-aos="fade-up" id="Ann">Announcements</h2>
+      <h5 data-aos="fade-up" data-aos-delay="100">The Latest.</h5>
+      <div class="row">
+        <div class="card col s6 m3 b1" data-aos="fade-up" data-aos-delay="100" style="height:80vh;">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="https://st3.depositphotos.com/3382541/12567/v/450/depositphotos_125673290-stock-illustration-rocket-flying-up-in-sky.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Site Launch<i class="material-icons right">more_vert</i></span>
+            <p class="cp">We're off, who knows what adventures we may see or struggles we may endure, but this is one step forward!</p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Site Launch<i class="material-icons right">close</i></span>
+            <p class="cp">We're off, who knows what adventures we may see or struggles we may endure, but this is one step forward!</p>
+          </div>
+        </div>
+        <div class="card col s6 m3 b2 right2" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="data:image/png;base64,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">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Fiverr<i class="material-icons right">more_vert</i></span>
+            <p class="cp">Starting to sell on fiverr! View my listing <a href="" target="blank">here</a>!</p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Fiverr<i class="material-icons right">close</i></span>
+            <p class="cp">Starting to sell on fiverr! View my listing <a href="" target="blank">here</a>!</p>
+          </div>
+        </div>
+        <!--
+        <div class="card col s6 m3 right2">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="https://images.pexels.com/photos/1487154/pexels-photo-1487154.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+            <p class="cp"><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p class="cp">Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+        -->
+        
+      </div>
+      
+      </div>
+      <div class="row">
+       
+      </div>
+      <footer class="page-footer  deep-purple darken-3">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Hamad Moniem</h5>
+              <p class="grey-text text-lighten-4">Website created from <b>scratch</b> by <b>Hamad Moniem</b>  </p>
+              <h5 class="white-text">Contact</h5>
+              <p class="grey-text text-lighten-4">For info or business inquiries, please contact me at <b>HamadMoniemDev@gmail.com </b>and I will get to you shortly. </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Find Me @</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="https://www.fiverr.com/hamad_moniem" target="_blank">Fiverr</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://dribbble.com/HamadMoniem" target="_blank">Dribble</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://github.com/HamadMoniem" target="_blank">Github</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://www.behance.net/HamadMoniem" target="_blank">Behance</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-copyright  deep-purple darken-4">
+          <div class="container">
+          © 2020 Copyright Hamad
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          </div>
+        </div>
+      </footer>
+      
+  </div>
+  <script
+      type="text/javascript"
+      src="https://unpkg.com/aos@2.3.1/dist/aos.js"
+    ></script>
+  <script>
+    AOS.init()
+  </script>
+  <script>
 
-            particlesJS("particles", {
-                "particles": {
-                    "number": {
-                        "value": 80,
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#81ecec"
-                    },
-                    "shape": {
-                        "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#a2dede"
-                        },
-                        "polygon": {
-                            "nb_sides": 0
-                        },
+    // Or with jQuery
+    $( ".allcontent" ).fadeOut( 0 );
+  
+    $( ".loader" ).delay( 2000 ).fadeOut( 400 );
+    $( ".allcontent" ).delay( 2500 ).fadeIn( 1000 );
+    $(".allcontent").delay(2500).animate({overflowY:"scroll"}, function() {
+      });
+    $(document).ready(function(){
+      $('.tooltipped').tooltip();
+    });  
+    
+   
+      </script>
+    <script>
+      var data = {
+labels: ["HTML5", "CSS3", "Materialize", "JavaScript", "jQuery", "Bootstrap"],  datasets: [{
+    backgroundColor: "#b39ddb",
+    borderColor: "#4527a0",
+    label :"Web Development",
+    borderWidth: 2,
+    hoverBackgroundColor: "#9fa8da",
+    hoverBorderColor: "#283593 ",
+    data: [100, 95, 80, 60, 60, 50],
+  }]
+};
 
-                    },
-                    "opacity": {
-                        "value": 1,
-                        "random": true,
-                        "anim": {
-                            "enable": true,
-                            "speed": 1,
-                            "opacity_min": 0.1,
-                            "sync": true
-                        }
-                    },
-                    "size": {
-                        "value": 4,
+var options = {
+  maintainAspectRatio: true,
+  scales: {
+    yAxes: [{
+      stacked: true,
+      gridLines: {
+        display: true,
+        color: "rgba(255,99,132,0.2)"
+      }
+    }],
+    xAxes: [{
+      gridLines: {
+        display: false
+      }
+    }]
+  }
+};
 
+Chart.Bar('chart', {
+  options: options,
+  data: data
+});
 
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 200,
-                        "color": "#a2dede",
-                        "opacity": 0.1  ,
-                        "width": 50
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 2,
-                        "direction": "none",
-                        "random": false,
-                        "straight": false,
-                        "out_mode": "out",
-                        "bounce": false,
-                        "attract": {
-                            "enable": false,
-                            "rotateX": 600,
-                            "rotateY": 1200
-                        }
-                    }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "grab"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    },
-                    "modes": {
-                        "grab": {
-                            "distance": 150,
-                            "line_linked": {
-                                "opacity": 1
-                            }
-                        },
-                        "bubble": {
-                            "distance": 400,
-                            "size": 40,
-                            "duration": 2,
-                            "opacity": 8,
-                            "speed": 3
-                        },
-                        "repulse": {
-                            "distance": 200,
-                            "duration": 0.4
-                        },
-                        "push": {
-                            "particles_nb": 4
-                        },
-                        "remove": {
-                            "particles_nb": 2
-                        }
-                    }
-                },
-                "retina_detect": true
-            });
-
-            requestAnimationFrame();
-
-
-        </script>
-        <script>
-            var rellax = new Rellax('.rellax');
-
-
-        </script>
-    </body>
-
+    </script>
+    
+  </body>
 </html>
